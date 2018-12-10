@@ -82,7 +82,7 @@ BluenetLib has a number of methods available:
 >```
 
 
-***`getEnergyUsage(stoneIds = [ strubg], beginTime =  timestamp, endTime = timestamp)`***
+***`getEnergyUsage(stoneIds = [string], beginTime =  timestamp, endTime = timestamp)`***
 > @param **stoneIds** *: array of strings; ‘12-byte ‘MongoDB ObjectID'*  
 > @param **beginTime** *: number; forms a range with endtime;  format emitted by javascripts new Date().toValue()*  
 > @param **endTime** *: number; forms a range with beginTime;  format emitted by javascripts new Date().toValue()*  
@@ -91,7 +91,7 @@ BluenetLib has a number of methods available:
 > {
 >   "startTime": timestamp, //optional
 >   "endTime": timestamp, //optional
->   "interval":0, //optional
+>   "interval": number, //optional
 >   "stones":[
 >      {
 >         "stoneID": string,
@@ -163,7 +163,7 @@ BluenetLib has a number of methods available:
 >}
 >```
 
-***`insertPowerUsage(stoneId = string, data = [Object timeAndPower])
+***`insertPowerUsage(stoneId = string, data = array of timeAndPower)
 `***
 > @param **stoneId** *: string; ‘12-byte ‘MongoDB ObjectID'*
 > @param **data** *: array of timeAndPower; {time = timestamp, kWh = number }; number;format emitted by javascripts new Date().toValue() ; kWh(kilowatt hour) = number between 0 and infinity ; 
