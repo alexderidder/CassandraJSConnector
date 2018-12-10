@@ -20,16 +20,16 @@ node connect.js
 You import the library using require.
 ``` javascript
 // import library
-let BluenetLib = require("../middleware/cassandraAPI")
+let CassandraAPI = require("../middleware/cassandraAPI")
 
-// create a Bluenet instance
+// create a CassandraAPI instance
 const cassandraAPI = new CassandraAPI();
 
 // connect
 client.connect(options);
 ```
 
-BluenetLib has a number of methods available:
+CassandraAPI has a number of methods available:
 
 ***`getPowerUsage(options)`***
 > @param **options** : [TLS Server options documentation](https://nodejs.org/api/tls.html#tls_new_tls_tlssocket_socket_options "TLSServer Documentation")
