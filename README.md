@@ -122,8 +122,8 @@ CassandraAPI has a number of methods available:
 
 ***`deletePowerUsage(stoneId = string , beginTime = timestamp, endTime = timestamp)`***
 > @param **stoneId** *: string; ‘12-byte ‘MongoDB ObjectID'*  
-> @param **beginTime** *: number; forms a range with endtime;  format emitted by javascripts new Date().toValue()*  
-> @param **endTime** *: number; forms a range with beginTime;  format emitted by javascripts new Date().toValue()*  
+> @param **beginTime** *: number; forms a range with endtime; format emitted by javascripts new Date().toValue()*  
+> @param **endTime** *: number; forms a range with beginTime; format emitted by javascripts new Date().toValue()*  
 > @returns **Promise<data>** *: json: number of successful deletions*    
 >```js
 > {
@@ -133,8 +133,8 @@ CassandraAPI has a number of methods available:
 
 ***`deleteEnergyUsage(stoneId = string , beginTime = timestamp, endTime = timestamp)`***
 > @param **stoneId** *: string; ‘12-byte ‘MongoDB ObjectID'*  
-> @param **beginTime** *: uint32; forms a range with endtime;  format emitted by javascripts new Date().toValue()*  
-> @param **endTime** *: uint32; forms a range with beginTime;  format emitted by javascripts new Date().toValue()*  
+> @param **beginTime** *: uint32; forms a range with endtime; format emitted by javascripts new Date().toValue()*  
+> @param **endTime** *: uint32; forms a range with beginTime; format emitted by javascripts new Date().toValue()*  
 > @returns **Promise<data>** *: json: number of successful deletions*  
 >```js 
 > {
@@ -144,8 +144,8 @@ CassandraAPI has a number of methods available:
 
 ***`deleteAllUsageData(stoneId =  string , beginTime = timestamp, endTime = timestamp)`***
 > @param **stoneId** *: string; ‘12-byte ‘MongoDB ObjectID'*  
-> @param **beginTime** *: number; forms a range with endtime;  format emitted by javascripts new Date().toValue()*  
-> @param **endTime** *: number; forms a range with beginTime;  format emitted by javascripts new Date().toValue()*  
+> @param **beginTime** *: number; forms a range with endtime; format emitted by javascripts new Date().toValue()*  
+> @param **endTime** *: number; forms a range with beginTime; format emitted by javascripts new Date().toValue()*  
 > @returns **Promise<data>** *: json: number of successful deletions*  
 >```js
 > {
@@ -155,7 +155,7 @@ CassandraAPI has a number of methods available:
 
 ***`insertEnergyUsage(stoneId = string, data = array of timeAndEnergy)`***
 > @param **stoneId** *: string; ‘12-byte ‘MongoDB ObjectID'*  
-> @param **data** *: array of timeAndEnergy; {time = timestamp, w = number, pf = number }; number;format emitted by javascripts new Date().toValue() ; w(watt) = number between 0 and 3600 ; pf(powerfactor) = number between -1 and 1*  
+> @param **data** *: array of timeAndEnergy; {time = timestamp, w = number, pf = number }; time = number, format emitted by javascripts new Date().toValue(); w(watt) = number between 0 and 3600; pf(powerfactor) = number between -1 and 1*  
 > @returns **Promise<data>** *: json: number of successful inserts*  
 >```js
 > {
@@ -166,7 +166,7 @@ CassandraAPI has a number of methods available:
 ***`insertPowerUsage(stoneId = string, data = array of timeAndPower)
 `***
 > @param **stoneId** *: string; ‘12-byte ‘MongoDB ObjectID'*
-> @param **data** *: array of timeAndPower; {time = timestamp, kWh = number }; number;format emitted by javascripts new Date().toValue() ; kWh(kilowatt hour) = number between 0 and infinity ; 
+> @param **data** *: array of timeAndPower; {time = timestamp, kWh = number };time = number, format emitted by javascripts new Date().toValue(); kWh(kilowatt hour) = number between 0 and infinity; 
 > @returns **Promise<data>** *: json: number of successful inserts*
 >```js
 > {
