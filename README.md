@@ -32,37 +32,48 @@ client.connect(options);
 BluenetLib has a number of methods available:
 
 ***`getPowerUsage(options)`***
->@param **options** *: [TLS Server options documentation](https://nodejs.org/api/tls.html#tls_new_tls_tlssocket_socket_options "TLSServer Documentation")*
->@returns void
+> @param **options** : [TLS Server options documentation](https://nodejs.org/api/tls.html#tls_new_tls_tlssocket_socket_options "TLSServer Documentation")
+> ``` js 
+> options = {
+>   ca: [buffer],
+>   key: buffer,
+>   cert: buffer,
+>   host: string,
+>   port: number,
+>   rejectUnauthorized: boolean,
+>   requestCert: boolean
+> }
+> ```
+> @returns void  
 
 ### Select
-***`getPowerUsage(stoneIds = [ “5b8d0088acc9bc0004af2cc5”], beginTime =  “1543921010507”, endTime = “1543921010507”)`***
-> @param **stoneIds** *: array of strings; ‘12-byte ‘MongoDB ObjectID'*
-> @param **beginTime** *: uint32; forms a range with endtime;  format emitted by javascripts new Date().toValue()*
-> @param **endTime** *: uint32; forms a range with beginTime;  format emitted by javascripts new Date().toValue()*
-> @returns **Promise<data>** *; data json object*
->```json
+***`getPowerUsage(stoneIds = [string], beginTime = timestamp, endTime = timestamp)`***
+> @param **stoneIds** *: array of strings; ‘12-byte ‘MongoDB ObjectID'*  
+> @param **beginTime** *: number; forms a range with endtime;  format emitted by javascripts new Date().toValue()*  
+> @param **endTime** *: number; forms a range with beginTime;  format emitted by javascripts new Date().toValue()*  
+> @returns **Promise<data>** *: data json object*
+> ```js
 > {
->   "startTime":"1543921010507", //optional
->   "endTime":"1543921010507", //optional
->   "interval":0, //optional
+>   "startTime": timestamp, //optional
+>   "endTime": timestamp, //optional
+>   "interval": number , //optional
 >   "stones":[
 >      {
->         "stoneID":"5b8d0088acc9bc0004af2cc5",
+>         "stoneID": string,
 >         "Data":[
 >            {
->               "time":"1543921010507",
+>               "time": timestamp,
 >               "value":
->               {
->                    "kWh" : 3.0233014
->               }
+>                  {
+>                     "kWh" : number
+>                  }
 >            },
 >            {
->               "time":"1543921010507",
+>               "time": timestamp,
 >               "value":
->               {
->                   "kWh" : 2.188571
->               }
+>                  {
+>                     "kWh" : number
+>                  }
 >            }
 >         ]
 >      }
@@ -71,35 +82,35 @@ BluenetLib has a number of methods available:
 >```
 
 
-***`getEnergyUsage(stoneIds = [ “5b8d0088acc9bc0004af2cc5”], beginTime =  “1543921010507”, endTime = “1543921010507”)`***
-> @param **stoneIds** *: array of strings; ‘12-byte ‘MongoDB ObjectID'*
-> @param **beginTime** *: uint32; forms a range with endtime;  format emitted by javascripts new Date().toValue()*
-> @param **endTime** *: uint32; forms a range with beginTime;  format emitted by javascripts new Date().toValue()*
-> @returns **Promise<data>** *; data json object*
->```json
+***`getEnergyUsage(stoneIds = [ strubg], beginTime =  timestamp, endTime = timestamp)`***
+> @param **stoneIds** *: array of strings; ‘12-byte ‘MongoDB ObjectID'*  
+> @param **beginTime** *: number; forms a range with endtime;  format emitted by javascripts new Date().toValue()*  
+> @param **endTime** *: number; forms a range with beginTime;  format emitted by javascripts new Date().toValue()*  
+> @returns **Promise<data>** *: data json object*  
+>```js
 > {
->   "startTime":"1543921010507", //optional
->   "endTime":"1543921010507", //optional
+>   "startTime": timestamp, //optional
+>   "endTime": timestamp, //optional
 >   "interval":0, //optional
 >   "stones":[
 >      {
->         "stoneID":"5b8d0088acc9bc0004af2cc5",
+>         "stoneID": string,
 >         "Data":[
 >            {
->               "time":"1543921010507",
+>               "time": timestamp,
 >               "value":
->               {
->                       "w":3,
->						"pf":1
->               }
+>                 {
+>                    "w": number,
+>                    "pf": number
+>                 }
 >            },
 >            {
->               "time":"1543921010507",
+>               "time": timestamp,
 >               "value":
->               {
->           	  		"w":3,
->              			"pf":1
->               }
+>                 {
+>                    "w": number,
+>                    "pf": number
+>                 }
 >            }
 >         ]
 >      }
@@ -109,60 +120,56 @@ BluenetLib has a number of methods available:
 
 ## Delete
 
-***`deletePowerUsage(stoneId =  “5b8d0088acc9bc0004af2cc5” , beginTime =  “1543921010507”, endTime = 1543921010507”)
-`***
-> @param **stoneId** *: string; ‘12-byte ‘MongoDB ObjectID'*
-> @param **beginTime** *: uint32; forms a range with endtime;  format emitted by javascripts new Date().toValue()*
-> @param **endTime** *: uint32; forms a range with beginTime;  format emitted by javascripts new Date().toValue()*
-> @returns **Promise<data>** *; json: number of successful deletions*
->```json
+***`deletePowerUsage(stoneId = string , beginTime = timestamp, endTime = timestamp)`***
+> @param **stoneId** *: string; ‘12-byte ‘MongoDB ObjectID'*  
+> @param **beginTime** *: number; forms a range with endtime;  format emitted by javascripts new Date().toValue()*  
+> @param **endTime** *: number; forms a range with beginTime;  format emitted by javascripts new Date().toValue()*  
+> @returns **Promise<data>** *: json: number of successful deletions*    
+>```js
 > {
->	 "deleted":1000
+>	 "deleted": number
 >}
 >```
 
-***`deleteEnergyUsage(stoneId =  “5b8d0088acc9bc0004af2cc5” , beginTime =  “1543921010507”, endTime = 1543921010507”)
-`***
-> @param **stoneId** *: string; ‘12-byte ‘MongoDB ObjectID'*
-> @param **beginTime** *: uint32; forms a range with endtime;  format emitted by javascripts new Date().toValue()*
-> @param **endTime** *: uint32; forms a range with beginTime;  format emitted by javascripts new Date().toValue()*
-> @returns **Promise<data>** *; json: number of successful deletions*
->```json
+***`deleteEnergyUsage(stoneId = string , beginTime = timestamp, endTime = timestamp)`***
+> @param **stoneId** *: string; ‘12-byte ‘MongoDB ObjectID'*  
+> @param **beginTime** *: uint32; forms a range with endtime;  format emitted by javascripts new Date().toValue()*  
+> @param **endTime** *: uint32; forms a range with beginTime;  format emitted by javascripts new Date().toValue()*  
+> @returns **Promise<data>** *: json: number of successful deletions*  
+>```js 
 > {
->	 "deleted":1000
+>	 "deleted": number
 >}
 >```
 
-***`deleteAllUsageData(stoneId =  “5b8d0088acc9bc0004af2cc5” , beginTime =  “1543921010507”, endTime = 1543921010507”)
-`***
-> @param **stoneId** *: string; ‘12-byte ‘MongoDB ObjectID'*
-> @param **beginTime** *: uint32; forms a range with endtime;  format emitted by javascripts new Date().toValue()*
-> @param **endTime** *: uint32; forms a range with beginTime;  format emitted by javascripts new Date().toValue()*
-> @returns **Promise<data>** *; json: number of successful deletions*
->```json
+***`deleteAllUsageData(stoneId =  string , beginTime = timestamp, endTime = timestamp)`***
+> @param **stoneId** *: string; ‘12-byte ‘MongoDB ObjectID'*  
+> @param **beginTime** *: number; forms a range with endtime;  format emitted by javascripts new Date().toValue()*  
+> @param **endTime** *: number; forms a range with beginTime;  format emitted by javascripts new Date().toValue()*  
+> @returns **Promise<data>** *: json: number of successful deletions*  
+>```js
 > {
->	 "deleted":1000
+>	 "deleted": number
 >}
 >```
 
-***`insertEnergyUsage(stoneId = “5b8d0088acc9bc0004af2cc5”, data = [Object timeAndKWh])
-`***
-> @param **stoneId** *: string; ‘12-byte ‘MongoDB ObjectID'*
-> @param **data** *: array of timeAndWattPowerFactor; {time = “1543921010507”, w = 3.12, pf = 1 }; uint32;format emitted by javascripts new Date().toValue() ; w(watt) = float between 0 and 3600 ; pf(powerfactor) = float between -1 and 1*
-> @returns **Promise<data>** *; json: number of successful inserts*
->```json
+***`insertEnergyUsage(stoneId = string, data = array of timeAndEnergy)`***
+> @param **stoneId** *: string; ‘12-byte ‘MongoDB ObjectID'*  
+> @param **data** *: array of timeAndEnergy; {time = timestamp, w = number, pf = number }; number;format emitted by javascripts new Date().toValue() ; w(watt) = number between 0 and 3600 ; pf(powerfactor) = number between -1 and 1*  
+> @returns **Promise<data>** *: json: number of successful inserts*  
+>```js
 > {
->	"inserted":1000
+>	"inserted": number
 >}
 >```
 
-***`insertPowerUsage(stoneId = “5b8d0088acc9bc0004af2cc5”, data = [Object timeAndKWh])
+***`insertPowerUsage(stoneId = string, data = [Object timeAndPower])
 `***
 > @param **stoneId** *: string; ‘12-byte ‘MongoDB ObjectID'*
-> @param **data** *: array of timeAndWattPowerFactor; {time = “1543921010507”, w = 3.12, pf = 1 }; uint32;format emitted by javascripts new Date().toValue() ; w(watt) = float between 0 and 3600 ; pf(powerfactor) = float between -1 and 1*
-> @returns **Promise<data>** *; json: number of successful inserts*
->```json
+> @param **data** *: array of timeAndPower; {time = timestamp, kWh = number }; number;format emitted by javascripts new Date().toValue() ; kWh(kilowatt hour) = number between 0 and infinity ; 
+> @returns **Promise<data>** *: json: number of successful inserts*
+>```js
 > {
->	"inserted":1000
+>	"inserted": number
 >}
 >```
