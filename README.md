@@ -31,9 +31,9 @@ client.connect(options);
 
 BluenetLib has a number of methods available:
 
-    ***`getPowerUsage(options)`***
-    >@param **options** *: [TLS Server options documentation](https://nodejs.org/api/tls.html#tls_new_tls_tlssocket_socket_options "TLSServer Documentation")*
-    >@returns void
+***`getPowerUsage(options)`***
+>@param **options** *: [TLS Server options documentation](https://nodejs.org/api/tls.html#tls_new_tls_tlssocket_socket_options "TLSServer Documentation")*
+>@returns void
 
 ### Select
 ***`getPowerUsage(stoneIds = [ “5b8d0088acc9bc0004af2cc5”], beginTime =  “1543921010507”, endTime = “1543921010507”)`***
