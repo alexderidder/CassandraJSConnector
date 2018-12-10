@@ -23,7 +23,7 @@ You import the library using require.
 let CassandraAPI = require("../middleware/cassandraAPI")
 
 // create a CassandraAPI instance
-const cassandraAPI = new CassandraAPI();
+const client = new CassandraAPI();
 
 // connect
 client.connect(options);
