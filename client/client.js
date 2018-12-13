@@ -4,8 +4,8 @@ const tls = require('tls');
 const crypto = require('crypto');
 const MESSAGE_TIMEOUT_FROM_REQUEST_INTERVAL = 100000; // ms
 const MESSAGE_TIMEOUT_FROM_FIRST_RESPONSE_INTERVAL = 10; // ms
-class TLSClient {
 
+class TLSClient {
 
   constructor(options) {
     this.options = options;
@@ -17,11 +17,11 @@ class TLSClient {
     this.connected = false;
   }
 
+
   init() {
     this.TLSSocket.on('secureConnect', () => {
-      if ( this.TLSSocket.authorized) {
+      if (this.TLSSocket.authorized) {
         this.options["session"] = this.TLSSocket.getSession();
-        // console.log(this.options)
         this.connected = true;
         clearTimeout(this.reconnectTimeout);
       }
@@ -62,7 +62,7 @@ class TLSClient {
         let sessionId = this.receivedMessages.readUInt32LE(8);
         //When receiving header, set a timeout in which the full message is received. Do this only once.
         if (this.receivedHeader === false) {
-          this._setResponseTimeoutAndHeaderRead(sessionId)
+          this._setHeaderReadTimeout(sessionId)
         }
         //Can be multiple messages in receivedMessage buffer
         while (requestLength <= this.receivedMessages.length - index) {
@@ -78,7 +78,7 @@ class TLSClient {
             requestLength = this.receivedMessages.readUInt32LE(index);
             sessionId = this.receivedMessages.readUInt32LE(index + 8);
             //When receiving header, set a timeout in which the full message is received.
-            this._setResponseTimeoutAndHeaderRead(sessionId);
+            this._setHeaderReadTimeout(sessionId);
           } else {
             break;
           }
@@ -106,14 +106,21 @@ class TLSClient {
     })
   }
 
-  sendMessage(opCode, flag, message) {
+
+  /**
+   * Make header with opCode and combine with payload. Sent this to the server and return a payload which wait for the server to respond
+   * @param {number} opCode - operation Code of request
+   * @param {number} flag - flag of request
+   * @param {Buffer} payload - representing json most of the timey>}
+   */
+  sendMessage(opCode, payload) {
 
     return new Promise((resolve, reject) => {
       if (this.connected === false) {
         reject("Error, no connection over TLS");
         return
       }
-      let preparedMessage = this._prepareMessage(opCode, flag, message);
+      let preparedMessage = this._prepareMessage(opCode, payload);
       let msgId = preparedMessage.sessionId;
 
       let cleanupTimeout = setTimeout(() => {
@@ -127,26 +134,30 @@ class TLSClient {
     });
   }
 
-  _prepareMessage(opCode, flag, message) {
+
+  _prepareMessage(opCode, payload) {
     let messageId = crypto.randomBytes(4).readUInt32LE(0);
-    let buffer = new ArrayBuffer(20);
-    let uint32View = new Uint32Array(buffer);
-    let payloadBuffer = Buffer.from(JSON.stringify(message), 'utf8');
-    uint32View[0] = payloadBuffer.length + 20;
-    uint32View[1] = messageId;
-    uint32View[3] = opCode;
-    uint32View[4] = flag;
+    let headerBuffer = this._makeHeader(payload.length + 16, messageId, opCode);
     return {
       sessionId: messageId,
-      request: Buffer.concat([new Buffer(uint32View.buffer), payloadBuffer])
+      request: Buffer.concat([headerBuffer, payload])
     };
   }
 
+  _makeHeader(length, messageId, opCode){
+    let uInt32View = new Uint32Array(new ArrayBuffer(16));
+    uInt32View[0] = length
+    uInt32View[1] = messageId;
+    uInt32View[3] = opCode;
+    return new Buffer(uInt32View.buffer);
+  }
+
   _handleData(sessionId, messageLength, index) {
+    //Clear
     clearTimeout(this.sessions[sessionId].cleanupResponseTimeout);
     clearTimeout(this.sessions[sessionId].cleanupTimeout);
-    //read flag
-    let processedData
+    //read flag, 1 and 2 -> Resolve, 1 & Unknown -> Reject
+    let processedData;
     switch (this.receivedMessages.readUInt32LE(index + 16)) {
       case 1 :
         processedData = JSON.stringify((this.receivedMessages.slice(index + 20, index + messageLength).toString()));
@@ -161,11 +172,12 @@ class TLSClient {
         this._rejectSession(sessionId, processedData);
         break;
       default :
-        processedData = "Flag doesn't exist";
+        processedData = { "Code": 999 , "Message" : "Something went wrong in communication with the server"};
         this._rejectSession(sessionId, processedData);
     }
     delete this.sessions[sessionId];
   }
+
 
   _rejectSession(sessionId, processedData) {
     if (this.sessions[sessionId].reject === undefined) {
@@ -183,7 +195,7 @@ class TLSClient {
     this.sessions[sessionId].resolve(processedData);
   }
 
-  _setResponseTimeoutAndHeaderRead(sessionId) {
+  _setHeaderReadTimeout(sessionId) {
     let cleanupResponseTimeout = setTimeout(() => {
       if (this.sessions[sessionId].reject === undefined) {
         console.log("Error : sessionId doesn't exists");
