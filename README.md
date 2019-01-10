@@ -31,7 +31,7 @@ client.connect(options);
 
 CassandraAPI has a number of methods available:
 
-***`getPowerUsage(options)`***
+***`connect(options)`***
 > @param **options** : [TLS Server options documentation](https://nodejs.org/api/tls.html#tls_new_tls_tlssocket_socket_options "TLSServer Documentation")
 > ``` js 
 > options = {
@@ -47,7 +47,7 @@ CassandraAPI has a number of methods available:
 > @returns void  
 
 ### Select
-***`getPowerUsage(stoneIds = [string], beginTime = timestamp, endTime = timestamp)`***
+***`getEnergyUsage(stoneIds = [string], beginTime = timestamp, endTime = timestamp)`***
 > @param **stoneIds** *: array of strings; ‘12-byte ‘MongoDB ObjectID'*  
 > @param **beginTime** *: number; forms a range with endtime;  format emitted by javascripts new Date().toValue()*  
 > @param **endTime** *: number; forms a range with beginTime;  format emitted by javascripts new Date().toValue()*  
@@ -82,7 +82,7 @@ CassandraAPI has a number of methods available:
 >```
 
 
-***`getEnergyUsage(stoneIds = [string], beginTime =  timestamp, endTime = timestamp)`***
+***`getPowerUsage(stoneIds = [string], beginTime =  timestamp, endTime = timestamp)`***
 > @param **stoneIds** *: array of strings; ‘12-byte ‘MongoDB ObjectID'*  
 > @param **beginTime** *: number; forms a range with endtime;  format emitted by javascripts new Date().toValue()*  
 > @param **endTime** *: number; forms a range with beginTime;  format emitted by javascripts new Date().toValue()*  
@@ -120,7 +120,7 @@ CassandraAPI has a number of methods available:
 
 ## Delete
 
-***`deletePowerUsage(stoneId = string , beginTime = timestamp, endTime = timestamp)`***
+***`deleteEnergyUsage(stoneId = string , beginTime = timestamp, endTime = timestamp)`***
 > @param **stoneId** *: string; ‘12-byte ‘MongoDB ObjectID'*  
 > @param **beginTime** *: number; forms a range with endtime; format emitted by javascripts new Date().toValue()*  
 > @param **endTime** *: number; forms a range with beginTime; format emitted by javascripts new Date().toValue()*  
@@ -163,7 +163,7 @@ CassandraAPI has a number of methods available:
 >}
 >```
 
-***`insertPowerUsage(stoneId = string, data = array of timeAndPower)
+***`insertEnergyUsage(stoneId = string, data = array of timeAndPower)
 `***
 > @param **stoneId** *: string; ‘12-byte ‘MongoDB ObjectID'*
 > @param **data** *: array of timeAndPower; {time = timestamp, kWh = number };time = number, format emitted by javascripts new Date().toValue(); kWh(kilowatt hour) = number between 0 and infinity; 

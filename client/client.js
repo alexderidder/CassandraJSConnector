@@ -160,7 +160,7 @@ class TLSClient {
     let processedData;
     switch (this.receivedMessages.readUInt32LE(index + 16)) {
       case 1 :
-        processedData = JSON.stringify((this.receivedMessages.slice(index + 20, index + messageLength).toString()));
+        processedData = this.receivedMessages.slice(index + 20, index + messageLength).toString();
         this._resolveSession(sessionId, processedData);
         break;
       case 2 :
@@ -168,7 +168,7 @@ class TLSClient {
         this._resolveSession(sessionId, processedData);
         break;
       case 100 :
-        processedData = JSON.stringify(this.receivedMessages.slice(20).toString());
+        processedData = this.receivedMessages.slice(20).toString();
         this._rejectSession(sessionId, processedData);
         break;
       default :

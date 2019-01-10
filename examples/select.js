@@ -1,28 +1,21 @@
-const fs = require('fs');
 const CassandraAPI = require('../middleware/cassandraAPI');
-let options = {
-  ca: [fs.readFileSync('./keys/ca-crt.pem')],
-  key: fs.readFileSync('./keys/client1-key.pem'),
-  cert: fs.readFileSync('./keys/client1-crt.pem'),
-  host: 'localhost',
-  port: 12345,
-  rejectUnauthorized: true,
-  requestCert: true
-};
 
 
 const client = new CassandraAPI();
-client.connect(options);
+client.connect();
 
 let checkConnected = setInterval(() => {
     if (client.isConnected()) {
       console.log("Client connected");
       clearInterval(checkConnected);
       let promises = [];
-      promises.push(client.getPowerUsage(["UtSosJFSKVQMvHaDncLM3YxF"]));
-      promises.push(client.getEnergyUsage(["UtSosJFSKVQMvHaDncLM3YxF"]));
+      promises.push(client.getEnergyUsage1(["UtSosJFSKVQMvHaDncLM3YxF"], new Date().getTime()+ 500000000000000, new Date().getTime() + 500000000000000 ));
+      // promises.push(client.getPowerUsage(["UtSosJFSKVQMvHaDncLM3YxF"]));
+      let time = new Date().getTime();
       Promise.all(promises).then((data) => {
-        console.log(data);
+        let a = JSON.parse(data);
+        console.log(a["stones"]["UtSosJFSKVQMvHaDncLM3YxF"]);
+        console.log(new Date().getTime() - time)
         client.close();
       }).catch((error) => {
           console.log(error);
@@ -33,4 +26,4 @@ let checkConnected = setInterval(() => {
 
     }
   }
-  , 1000)
+  , 1000);
