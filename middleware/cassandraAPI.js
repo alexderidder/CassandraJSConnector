@@ -1,6 +1,5 @@
 const Client = require('../client/client');
 
-const fs = require('fs');
 let localConfig = require('../middleware/config');
 let localSecurityConfig = require('../middleware/config.security');
 
@@ -24,7 +23,7 @@ class CassandraAPI {
    */
   connect() {
     this.tlsClient = new Client({...localConfig, ...localSecurityConfig});
-    this.tlsClient._connect();
+    this.tlsClient.connect();
   }
 
 

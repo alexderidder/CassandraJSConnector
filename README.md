@@ -3,21 +3,25 @@
 TLS client to talk with the Cassandra server
 
 ## Installation
+Install Node.JS (Compatible Version 10.15.0)
 
+https://nodejs.org/en/
+
+Run following command in this directory
 ```
 npm install
 ```
 
 ## Usage
 
-You can run the examples in the ./examples folder using:
+Run the examples in the ./examples folder using:
 ```
 node connect.js
 ```
 
 ## API
 
-You import the library using require.
+Import the library
 ``` javascript
 // import library
 let CassandraAPI = require("../middleware/cassandraAPI")
@@ -173,3 +177,5 @@ CassandraAPI has a number of methods available:
 >	"inserted": number
 >}
 >```
+
+## Testing

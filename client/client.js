@@ -19,6 +19,10 @@ class TLSClient {
 
 
   init() {
+    /**
+     * Event emitted after the handshake for a new connection has succesfully emitted (TLS library)
+     * Check if authorised, else reconnect
+     */
     this.TLSSocket.on('secureConnect', () => {
       if (this.TLSSocket.authorized) {
         this.options["session"] = this.TLSSocket.getSession();
@@ -29,11 +33,16 @@ class TLSClient {
         //Something may be wrong with your certificates
         console.log("Failed to auth TLS connection: ");
         console.log(this.TLSSocket.authorizationError);
-        this.TLSSocket.destroy()
-        this._connect();
+        this.TLSSocket.destroy();
+        this.connect();
       }
 
     });
+
+    /**
+     * Event emitted once the socket is succesfully closed (Net.Socket library)
+     * Don't reconnect if it is result of TLSClient.close
+     */
     this.TLSSocket.on('close', () => {
       // start the reconnect timeout every 2 seconds
       this.connected = false;
@@ -42,13 +51,24 @@ class TLSClient {
         console.log("Trying to reconnect");
         this.reconnectTimeout = setTimeout(() => {
           this.TLSSocket.destroy()
-          this._connect();
+          this.connect();
         }, 2000);
       }
     });
+
+    /**
+     * Event emitted when an error occurs, close will be emitted after (Net.Socket library)
+     * Print error on console
+     */
     this.TLSSocket.on('error', (err) => {
       console.warn("TLS ERROR", err);
     });
+
+    /**
+     * Event emitted when data is received (Net.Socket library)
+     * Server can send one piece of data, but client receive parts of this data (Depends on many factors). Parts are in order (First out, first in)
+     * When full message is received: process message.
+     */
     this.TLSSocket.on('data', (data) => {
       //Set an index, and add receivedBuffer to the previous message
       let index = 0;
@@ -67,7 +87,7 @@ class TLSClient {
         //Can be multiple messages in receivedMessage buffer
         while (requestLength <= this.receivedMessages.length - index) {
           //Handle the message, with a index where the message is located
-          this._handleData(sessionId, requestLength, index);
+          this._messageHandler(sessionId, requestLength, index);
           //When handles point to the next message
           index += requestLength;
           this.receivedHeader = false;
@@ -90,11 +110,18 @@ class TLSClient {
 
   }
 
-  _connect() {
+  /**
+   * Setup tls connection, set EventListeners
+   */
+  connect() {
     this.TLSSocket = tls.connect(this.options);
     this.init()
   }
 
+  /**
+   * Destroy connection, this will trigger close event. Close listener should not reconnect.
+   * Clear all timeouts
+   */
   close() {
     this.shouldRetry = false;
     this.TLSSocket.destroy();
@@ -111,7 +138,7 @@ class TLSClient {
    * Make header with opCode and combine with payload. Sent this to the server and return a payload which wait for the server to respond
    * @param {number} opCode - operation Code of request
    * @param {number} flag - flag of request
-   * @param {Buffer} payload - representing json most of the timey>}
+   * @param {Buffer} payload - representing json most of the time}
    */
   sendMessage(opCode, payload) {
 
@@ -134,7 +161,14 @@ class TLSClient {
     });
   }
 
-
+  /**
+   * Calculates messageLength and generates a random messageID.
+   * Concat all values to a buffer with (header + payload), message can now be sent over TLS.
+   * @param opCode
+   * @param payload
+   * @returns {{sessionId: Number, request: Buffer}}
+   * @private
+   */
   _prepareMessage(opCode, payload) {
     let messageId = crypto.randomBytes(4).readUInt32LE(0);
     let headerBuffer = this._makeHeader(payload.length + 16, messageId, opCode);
@@ -144,15 +178,34 @@ class TLSClient {
     };
   }
 
+  /**
+   * Makes 16 Byte header, with (length, messageID, 0, opCode)
+   * @param length
+   * @param messageId
+   * @param opCode
+   * @returns {Buffer}
+   * @private
+   */
   _makeHeader(length, messageId, opCode){
     let uInt32View = new Uint32Array(new ArrayBuffer(16));
-    uInt32View[0] = length
+    uInt32View[0] = length;
     uInt32View[1] = messageId;
+    uInt32View[2] = 0;
     uInt32View[3] = opCode;
     return new Buffer(uInt32View.buffer);
   }
 
-  _handleData(sessionId, messageLength, index) {
+
+  /**
+   * This method is called when full message is retrieved from TLS server. This message should pass to the cassandra API.
+   * Timeouts needs to be cleared, because message arrived.
+   * Per OpCode a different message should be resolved or reject.
+   * @param sessionId
+   * @param messageLength
+   * @param index
+   * @private
+   */
+  _messageHandler(sessionId, messageLength, index) {
     //Clear
     clearTimeout(this.sessions[sessionId].cleanupResponseTimeout);
     clearTimeout(this.sessions[sessionId].cleanupTimeout);
@@ -179,6 +232,12 @@ class TLSClient {
   }
 
 
+  /**
+   * Reject promise and remove from session array
+   * @param sessionId
+   * @param processedData
+   * @private
+   */
   _rejectSession(sessionId, processedData) {
     if (this.sessions[sessionId].reject === undefined) {
       console.log("Error : sessionId doesn't exists");
@@ -187,6 +246,12 @@ class TLSClient {
     this.sessions[sessionId].reject(processedData);
   }
 
+  /**
+   * Resolve promise and remove from session array
+   * @param sessionId
+   * @param processedData
+   * @private
+   */
   _resolveSession(sessionId, processedData) {
     if (this.sessions[sessionId].resolve === undefined) {
       console.log("Error : sessionId doesn't exists");
@@ -195,6 +260,12 @@ class TLSClient {
     this.sessions[sessionId].resolve(processedData);
   }
 
+  /**
+   * When a message is not received fully, this should result in destroy and reconnect.
+   * This should never happen, it's a failsave.
+   * @param sessionId
+   * @private
+   */
   _setHeaderReadTimeout(sessionId) {
     let cleanupResponseTimeout = setTimeout(() => {
       if (this.sessions[sessionId].reject === undefined) {
@@ -203,7 +274,7 @@ class TLSClient {
       }
       this.sessions[sessionId].reject("Message to short");
       this.TLSSocket.destroy();
-      this._connect();
+      this.connect();
     }, MESSAGE_TIMEOUT_FROM_FIRST_RESPONSE_INTERVAL);
     this.sessions[sessionId] = {...this.sessions[sessionId], cleanupResponseTimeout: cleanupResponseTimeout};
     this.receivedHeader = true;

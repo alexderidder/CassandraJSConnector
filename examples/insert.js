@@ -5,17 +5,17 @@ client.connect();
 
 let checkConnected = setInterval(() => {
     if (client.isConnected()) {
-      console.log("Client connected");
+      console.log("Client connected"
+      );
       clearInterval(checkConnected);
       let promises = [];
 
-      promises.push(client.insertEnergyUsage("UtSosJFSKVQMvHaDncLM3YxF", makePowerInserts(10000000)));
-      // promises.push(client.insertPowerUsage1("UtSosJFSKVQMvHaDncLM3YxF", makeEnergyInserts(1000)));
-
+      promises.push(client.insertEnergyUsage("test", makeEnergyInserts(10000)));
+      let time = new Date().getTime();
       Promise.all(promises).then((data) => {
         console.log(data);
         client.close();
-
+        console.log("Took in ms:", new Date().getTime() - time)
       }).catch((error) => {
         console.log(error);
         client.close();
@@ -27,11 +27,12 @@ let checkConnected = setInterval(() => {
 
 function makeEnergyInserts(index) {
   let data = [];
-  let time = new Date().valueOf() - 1000*60*60*24*7;
+  let time = 1549274006010 ;
   let kWh = 0;
   for (let i = 0; i < index; i++) {
     kWh += Math.random() ;
-    time += Math.floor(1000 * Math.random());
+    time += 1000;
+
     data.push({time: time.valueOf(), value: {kWh: kWh}})
   }
   return data
@@ -40,11 +41,9 @@ function makeEnergyInserts(index) {
 
 function makePowerInserts(index) {
   let data = [];
-  let time = new Date().valueOf();
-  let kWh = 0;
+  let time = 1549274006010;
   for (let i = 0; i < index; i++) {
-    kWh += Math.random() * 0.1;
-    time += 5;
+    time += 1000;
     data.push({time: time.valueOf(), value: {pf: Math.random() * 2 - 1, watt: Math.random() * 3600}})
   }
   return data

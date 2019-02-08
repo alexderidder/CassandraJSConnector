@@ -1,7 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="67e7ef7f-6832-444f-acfc-fe801313c713" name="Default Changelist" comment="" />
+    <list default="true" id="67e7ef7f-6832-444f-acfc-fe801313c713" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/NodejsClientTimeseries.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/NodejsClientTimeseries.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/client.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/client.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/connect.js" beforeDir="false" afterPath="$PROJECT_DIR$/examples/connect.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/delete.js" beforeDir="false" afterPath="$PROJECT_DIR$/examples/delete.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/insert.js" beforeDir="false" afterPath="$PROJECT_DIR$/examples/insert.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/select.js" beforeDir="false" afterPath="$PROJECT_DIR$/examples/select.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middleware/cassandraAPI.js" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/cassandraAPI.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middleware/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middleware/config.production.js" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/config.production.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middleware/config.security.js" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/config.security.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middleware/config.security.production.js" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/config.security.production.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mongodb.js" beforeDir="false" afterPath="$PROJECT_DIR$/mongodb.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -11,101 +33,16 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="1528164069">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="20" />
-          <entry key="project.open.time.0" value="1" />
-          <entry key="project.open.time.1" value="2" />
-          <entry key="project.open.time.10" value="1" />
-          <entry key="project.open.time.12" value="1" />
-          <entry key="project.open.time.14" value="3" />
-          <entry key="project.open.time.18" value="2" />
-          <entry key="project.open.time.19" value="1" />
-          <entry key="project.open.time.2" value="2" />
-          <entry key="project.open.time.6" value="2" />
-          <entry key="project.open.time.7" value="7" />
-          <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="23" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="bat" value="1" />
-          <entry key="crt" value="1" />
-          <entry key="gitignore" value="3" />
-          <entry key="html" value="1" />
-          <entry key="js" value="85" />
-          <entry key="json" value="6" />
-          <entry key="key" value="1" />
-          <entry key="md" value="2" />
-          <entry key="pem" value="16" />
-          <entry key="ts" value="7" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="HTML" value="1" />
-          <entry key="JSON" value="6" />
-          <entry key="JavaScript" value="85" />
-          <entry key="Markdown" value="1" />
-          <entry key="PLAIN_TEXT" value="23" />
-          <entry key="TypeScript" value="7" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="gitignore" value="42" />
-          <entry key="html" value="30" />
-          <entry key="js" value="23927" />
-          <entry key="json" value="27" />
-          <entry key="md" value="163" />
-          <entry key="pem" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="HTML" value="30" />
-          <entry key="JSON" value="27" />
-          <entry key="JavaScript" value="23927" />
-          <entry key="Markdown" value="163" />
-          <entry key="PLAIN_TEXT" value="43" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
   <component name="FavoritesManager">
     <favorites_list name="NodejsClientTimeseries" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/middleware/config.js">
+        <entry file="file://$PROJECT_DIR$/examples/connect.js">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret selection-end-line="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="91">
-                <caret line="31" column="47" lean-forward="true" selection-start-line="31" selection-start-column="47" selection-end-line="31" selection-end-column="47" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="17" selection-start-column="17" selection-end-column="17" />
+              <caret column="28" selection-start-column="28" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -113,28 +50,53 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/middleware/cassandraAPI.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2057">
-              <caret line="120" lean-forward="true" selection-start-line="120" selection-end-line="120" />
-              <caret line="121" column="5" lean-forward="true" selection-start-line="121" selection-start-column="5" selection-end-line="121" selection-end-column="5" />
+            <state relative-caret-position="225">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/client.js">
+        <entry file="file://$PROJECT_DIR$/client/client.test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1649">
-              <caret line="98" column="29" lean-forward="true" selection-start-line="98" selection-start-column="29" selection-end-line="98" selection-end-column="29" />
-              <caret line="97" column="11" lean-forward="true" selection-start-line="97" selection-start-column="11" selection-end-line="97" selection-end-column="11" />
+            <state relative-caret-position="195">
+              <caret line="13" column="54" selection-start-line="13" selection-start-column="54" selection-end-line="13" selection-end-column="54" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mongodb.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/examples/select.js">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="23" column="31" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node_modules/jest-runtime/build/script_transformer.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="6030">
+              <caret line="402" column="16" selection-start-line="402" selection-start-column="16" selection-end-line="402" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/examples/insert.js">
+          <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="44" selection-start-column="43" selection-end-column="44" />
+              <caret column="59" lean-forward="true" selection-start-column="59" selection-end-column="59" />
             </state>
           </provider>
         </entry>
@@ -143,34 +105,25 @@
         <entry file="file://$PROJECT_DIR$/examples/delete.js">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="19" selection-start-column="19" selection-end-column="19" />
+              <caret column="59" selection-start-column="58" selection-end-column="59" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/examples/insert.js">
+        <entry file="file://$PROJECT_DIR$/client/client.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="10" lean-forward="true" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
+            <state relative-caret-position="105">
+              <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mongodb.js">
+        <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/examples/connect.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+            <state>
+              <caret column="1" selection-start-column="1" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -197,6 +150,9 @@
       <find>connect</find>
       <find>close</find>
       <find>beginTime</find>
+      <find>authorizationError</find>
+      <find>shouldRetry</find>
+      <find>buffer</find>
     </findStrings>
     <replaceStrings>
       <replace>startTime</replace>
@@ -208,7 +164,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/node_modules/main.js" />
         <option value="$PROJECT_DIR$/messages.js" />
         <option value="$PROJECT_DIR$/cassandraAPI.js" />
@@ -229,41 +184,29 @@
         <option value="$PROJECT_DIR$/middleware/config.local.js" />
         <option value="$PROJECT_DIR$/middleware/config.production.js" />
         <option value="$PROJECT_DIR$/middleware/config.security.production.js" />
-        <option value="$PROJECT_DIR$/examples/delete.js" />
-        <option value="$PROJECT_DIR$/client/client.js" />
-        <option value="$PROJECT_DIR$/examples/select.js" />
-        <option value="$PROJECT_DIR$/mongodb.js" />
-        <option value="$PROJECT_DIR$/examples/insert.js" />
-        <option value="$PROJECT_DIR$/middleware/cassandraAPI.js" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/middleware/cassandraAPI.js" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/client/client.js" />
+        <option value="$PROJECT_DIR$/client/client.test.js" />
+        <option value="$PROJECT_DIR$/mongodb.js" />
+        <option value="$PROJECT_DIR$/examples/delete.js" />
+        <option value="$PROJECT_DIR$/examples/insert.js" />
+        <option value="$PROJECT_DIR$/examples/select.js" />
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
     <exe-path />
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="NodeModulesDirectoryManager">
-    <handled-path value="$PROJECT_DIR$/node_modules" />
-  </component>
-  <component name="NodePackageJsonFileManager">
-    <packageJsonPaths>
-      <path value="$PROJECT_DIR$/package.json" />
-    </packageJsonPaths>
-  </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="525" />
-    <option name="y" value="-20" />
-    <option name="width" value="974" />
-    <option name="height" value="504" />
+    <option name="x" value="1987" />
+    <option name="y" value="25" />
+    <option name="width" value="1853" />
+    <option name="height" value="1055" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -271,6 +214,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -297,7 +241,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -305,22 +248,23 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/Alex/.WebStorm2018.2/config/javascript/nodejs/8.11.4/core-modules/net.js" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="8.11.4" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../crownstone-cloud" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/jest" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Alex\Documents\Github\NodejsClientTimeseries" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Alex\Documents\Github\NodejsClientTimeseries\middleware" />
       <recent name="C:\Users\Alex\Documents\Github\NodejsClientTimeseries" />
       <recent name="C:\Users\Alex\Documents\Github\NodejsClientTimeseries\keys" />
       <recent name="C:\Users\Alex\Documents\Github\NodejsClientTimeseries\client" />
       <recent name="C:\Users\Alex\Documents\Github\NodejsClientTimeseries\" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Alex\Documents\Github\NodejsClientTimeseries" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -334,6 +278,57 @@
         </RuleState>
       </list>
     </option>
+  </component>
+  <component name="RunManager" selected="Jest.Check prepare message session id with payload">
+    <configuration name="Check prepare message session id creation" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/client/client.test.js" />
+      <test-names>
+        <test-name value="Check prepare message session id creation" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="Check prepare message session id with payload" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/client/client.test.js" />
+      <test-names>
+        <test-name value="Check prepare message session id with payload" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="prepare message check request" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/client/client.test.js" />
+      <test-names>
+        <test-name value="prepare message check request" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Jest.prepare message check request" />
+      <item itemvalue="Jest.Check prepare message session id creation" />
+      <item itemvalue="Jest.Check prepare message session id with payload" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Jest.Check prepare message session id with payload" />
+        <item itemvalue="Jest.Check prepare message session id creation" />
+        <item itemvalue="Jest.prepare message check request" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -367,31 +362,75 @@
       <workItem from="1544693782750" duration="27085000" />
       <workItem from="1545051265344" duration="5970000" />
       <workItem from="1545215548997" duration="3553000" />
-      <workItem from="1547118642733" duration="487000" />
+      <workItem from="1547118642733" duration="1135000" />
+      <workItem from="1547214167817" duration="2028000" />
+      <workItem from="1547634557617" duration="2716000" />
+      <workItem from="1547719227883" duration="4753000" />
+      <workItem from="1547743614846" duration="1247000" />
+      <workItem from="1547802267714" duration="6845000" />
+      <workItem from="1548062284238" duration="1198000" />
+      <workItem from="1548230880282" duration="599000" />
+      <workItem from="1548405030300" duration="20331000" />
+      <workItem from="1548766415616" duration="2049000" />
+      <workItem from="1548776686522" duration="963000" />
+      <workItem from="1548841387485" duration="726000" />
+      <workItem from="1548865292017" duration="599000" />
+      <workItem from="1549618371323" duration="4875000" />
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="Check_prepare_message_session_id_creation - 2019.01.25 at 15h 18m 29s.xml">
+      <configuration name="Check prepare message session id creation" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="Check_prepare_message_session_id_creation - 2019.01.25 at 15h 19m 15s.xml">
+      <configuration name="Check prepare message session id creation" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="Check_prepare_message_session_id_creation - 2019.01.25 at 15h 19m 19s.xml">
+      <configuration name="Check prepare message session id creation" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="Check_prepare_message_session_id_creation - 2019.01.25 at 15h 19m 34s.xml">
+      <configuration name="Check prepare message session id creation" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="Check_prepare_message_session_id_creation - 2019.01.25 at 15h 19m 45s.xml">
+      <configuration name="Check prepare message session id creation" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="Check_prepare_message_session_id_creation - 2019.01.25 at 15h 20m 39s.xml">
+      <configuration name="Check prepare message session id creation" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="Check_prepare_message_session_id_with_payload - 2019.01.25 at 15h 20m 44s.xml">
+      <configuration name="Check prepare message session id with payload" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="Check_prepare_message_session_id_with_payload - 2019.01.25 at 15h 21m 05s.xml">
+      <configuration name="Check prepare message session id with payload" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="Check_prepare_message_session_id_with_payload - 2019.01.25 at 15h 22m 15s.xml">
+      <configuration name="Check prepare message session id with payload" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="Check_prepare_message_session_id_with_payload - 2019.01.25 at 15h 22m 49s.xml">
+      <configuration name="Check prepare message session id with payload" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="222976000" />
+    <option name="totallyTimeSpent" value="272553000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1050" extended-state="6" />
-    <editor active="true" />
+    <frame x="1987" y="25" width="1853" height="1055" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49914238" visible="true" weight="0.10590095" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49914238" visible="true" weight="0.16338798" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.50085765" side_tool="true" weight="0.21496312" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49789253" visible="true" weight="0.32969433" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49789253" weight="0.32969433" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49841937" weight="0.3995633" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5021075" side_tool="true" visible="true" weight="0.32969433" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.64278185" weight="0.06550218" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.36557376" side_tool="true" visible="true" weight="0.23542117" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.63442624" visible="true" weight="0.23542117" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -399,9 +438,6 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -414,44 +450,13 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/nodejs/8.11.4/core-modules/_http_server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1361">
-          <caret line="669" column="4" selection-start-line="669" selection-start-column="4" selection-end-line="669" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/javascript/nodejs/library/node-timers-stub.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="21" lean-forward="true" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/nodejs/8.11.4/core-modules/_http_server.js" />
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/javascript/nodejs/library/node-timers-stub.js" />
     <entry file="file://$PROJECT_DIR$/openssl.crt" />
     <entry file="file://$PROJECT_DIR$/server.key" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/nodejs/8.11.4/core-modules/net.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-750">
-          <caret line="965" selection-start-line="965" selection-end-line="965" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/nodejs/8.11.4/core-modules/net.js" />
     <entry file="file://$PROJECT_DIR$/messages.js" />
-    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="2252" column="16" lean-forward="true" selection-start-line="2252" selection-start-column="16" selection-end-line="2252" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/javascript/nodejs/library/node-globals-stub.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/javascript/nodejs/library/node-globals-stub.js" />
     <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="284">
@@ -459,13 +464,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/nodejs/8.11.4/core-modules/tls.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="794">
-          <caret line="259" column="42" selection-start-line="259" selection-start-column="42" selection-end-line="259" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/nodejs/8.11.4/core-modules/tls.js" />
     <entry file="file://$PROJECT_DIR$/examples/exit.js" />
     <entry file="file://$PROJECT_DIR$/main.js" />
     <entry file="file://$PROJECT_DIR$/keys/server-key.pem" />
@@ -478,27 +477,8 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/test.html" />
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/javascript/nodejs/library/node-buffer-stub.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="849">
-          <caret line="244" selection-start-line="244" selection-end-line="244" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/nodejs/8.11.4/core-modules/buffer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="445" column="12" selection-start-line="445" selection-start-column="12" selection-end-line="445" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/javascript/nodejs/library/node-buffer-stub.js" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/nodejs/8.11.4/core-modules/buffer.js" />
     <entry file="file://$PROJECT_DIR$/keys/client1-crt.pem" />
     <entry file="file://$PROJECT_DIR$/keys/client1-key.pem" />
     <entry file="file://$PROJECT_DIR$/keys/ca-crt.pem" />
@@ -537,13 +517,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/middleware/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -551,69 +524,106 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mongodb.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examples/delete.js">
+    <entry file="file://$PROJECT_DIR$/middleware/config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="19" selection-start-column="19" selection-end-column="19" />
+          <caret selection-end-line="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/examples/insert.js">
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="10" lean-forward="true" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
+        <state relative-caret-position="287419">
+          <caret line="16920" column="12" selection-start-line="16920" selection-start-column="12" selection-end-line="16920" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/examples/select.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="44" selection-start-column="43" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/nodejs/8.11.4/core-modules/crypto.js" />
     <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="2700">
+            <caret line="180" column="10" selection-start-line="180" selection-start-column="10" selection-end-line="180" selection-end-column="10" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="91">
-            <caret line="31" column="47" lean-forward="true" selection-start-line="31" selection-start-column="47" selection-end-line="31" selection-end-column="47" />
-          </first_editor>
-          <second_editor />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/connect.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="28" selection-start-column="28" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/middleware/cassandraAPI.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2057">
-          <caret line="120" lean-forward="true" selection-start-line="120" selection-end-line="120" />
-          <caret line="121" column="5" lean-forward="true" selection-start-line="121" selection-start-column="5" selection-end-line="121" selection-end-column="5" />
+        <state relative-caret-position="225">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/client.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="54" selection-start-line="13" selection-start-column="54" selection-end-line="13" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mongodb.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/jest-runtime/build/script_transformer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6030">
+          <caret line="402" column="16" selection-start-line="402" selection-start-column="16" selection-end-line="402" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/client.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1649">
-          <caret line="98" column="29" lean-forward="true" selection-start-line="98" selection-start-column="29" selection-end-line="98" selection-end-column="29" />
-          <caret line="97" column="11" lean-forward="true" selection-start-line="97" selection-start-column="11" selection-end-line="97" selection-end-column="11" />
+        <state relative-caret-position="105">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/examples/connect.js">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+        <state>
+          <caret column="1" selection-start-column="1" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/new 1.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/delete.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="59" selection-start-column="58" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/insert.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="59" lean-forward="true" selection-start-column="59" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/select.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="31" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
         </state>
       </provider>
     </entry>
